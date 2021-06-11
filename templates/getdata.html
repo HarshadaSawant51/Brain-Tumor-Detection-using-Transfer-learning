@@ -1,0 +1,27 @@
+<style>
+    .mymsg{
+        display:inline-block;
+        margin: 5px;
+        padding: 5px;
+        border-radius: 5px;
+    }
+    .datee{
+        display: inline-block;
+        font-size: 50%;
+    }
+    .othermsg{
+
+    }
+</style>
+<body>
+{% for roww in mdel %}
+
+   {% if roww[1] == msgto %}
+
+                   <div class="text-right"><span class="bg-success mymsg" style="font-size:30px;" > {{roww[4]}} <br> <span class="datee">  {{roww[3]}} </span></span> </div>
+    {% else %}
+                   <div class="text-left"><span class="bg-success mymsg" style="font-size:30px;" > {{roww[4]}} <br> <span class="datee">  {{roww[3]}} </span></span> </div>
+    {% endif %}
+{% endfor %}
+</body>
+</html>

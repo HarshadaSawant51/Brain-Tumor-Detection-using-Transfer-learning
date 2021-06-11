@@ -1,0 +1,67 @@
+{% include 'UserHead.html'%}
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<div class="container">
+    <div class="card  text-center    h3 {{color}} " style="padding:20px;border-radius:5px;margin-top:150px  ">{{msg}}</div>
+
+
+</div>
+
+<table class="table" border="1">
+    <thead class="thead-dark">
+      <tr>
+
+          <th>Features extracted in 8x8x512</th>
+          <th>Features reduced</th>
+              <th>Prediction</th>
+            <th>Thresholded Image</th>
+            <th>Morphological operations</th>
+          <th>Canny Edge detection</th>
+          <th>Tumor region highlighted</th>
+
+
+        </thead>
+</div>
+
+
+	<tbody>
+		<tr>
+
+
+            <td>{{uname_feature}}</td>
+            <td>{{uname_feature_ex}}</td>
+		            <td>{{pred}}</td>
+
+            {% if pred == 'Tumor not detected' %}
+            <td>Tumor not detected so segmenation is not applied</td>
+            <td>NA</td>
+            <td>NA</td>
+            <td>NA</td>
+                 {% else %}
+           <td><img height="80" src=" {{url_for('send_image1', filename=uname+'_thresholded.png')}}" ></td></td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=uname+'_closed.png')}}" ></td></td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=uname+'_canny.png')}}" ></td></td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=uname+'_res.png')}}" ></td></td>
+            {%endif%}
+
+
+
+
+
+
+		</tr>
+	</tbody>
+
+
+
+
+
+</table>
+

@@ -1,0 +1,68 @@
+{% include 'AdminHead.html'%}
+<head>
+<style>
+body {
+
+}
+</style>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+	<center><h1>View Doctor Details</h1></center>
+<body>
+
+
+<div class="container text-dark">
+ <table class="table" border="1">
+    <thead class="thead-dark">
+      <tr>
+        <th>User Id</th>
+          <th>Image</th>
+              <th> Name</th>
+            <th>User name</th>
+			<th>Email </th>
+			<th>Phone </th>
+
+          <th>Status</th>
+          <th>Action</th>
+        </thead>
+</div>
+{% for user in userDetails %}
+
+	<tbody>
+		<tr>
+
+		   <td>{{user[0]}}</td>
+            <td><img height="50" src=" {{url_for('send_image', filename=user[7])}}" ></td>
+		   <td>{{user[1]}}</td>
+			<td>{{user[2]}}</td>
+			<td>{{user[3]}}</td>
+<td>{{user[5]}}</td>
+           <td>{{user[8]}}</td>
+            {% if user[8] == 'not verified' %}
+                <td><a href="/activatedoc?Id={{user[0]}}"><button class="btn btn-primary">Activate</button></a> </td>
+            {% else %}
+                <td><a href="/deactivatedoc?Id={{user[0]}}"><button class="btn btn-danger">DeActivate</button></a> </td>
+            {% endif %}
+
+
+
+
+
+
+
+
+
+		</tr>
+	</tbody>
+
+  {% endfor %}
+
+
+</table>
+</center>

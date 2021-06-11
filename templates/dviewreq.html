@@ -1,0 +1,72 @@
+{% include 'dhead.html'%}
+<head>
+<style>
+body {
+
+}
+</style>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+	<center><h1>View Request Details</h1></center>
+<body>
+
+
+<div class="container text-dark">
+ <table class="table" border="1">
+    <thead class="thead-dark">
+      <tr>
+        <th>Request Id</th>
+          <th>Image</th>
+              <th> Patient Name</th>
+          <th>Description</th>
+            <th>Requested Date</th>
+
+          <th>Status</th>
+          <th>Action</th>
+     <th>Chat</th>
+        </thead>
+</div>
+{% for user in userDetails %}
+
+	<tbody>
+		<tr>
+
+		   <td>{{user[0]}}</td>
+            <td><img height="50" src=" {{url_for('send_image', filename=user[3])}}" ></td>
+		   <td>{{user[1]}}</td>
+			<td>{{user[4]}}</td>
+            <td>{{user[5]}}</td>
+            <td>{{user[6]}}</td>
+            {% if user[6] == 'pending' %}
+            <td><a href="/process?Id={{user[0]}}"><button class="btn btn-primary">View</button></a> </td>
+                 {% else %}
+            <td><a href="/viewresult?Id={{user[0]}}"><button class="btn btn-primary">View Result</button></a> </td>
+
+                  {%endif%}
+
+
+                <td><a href="/char1?dname={{user[1]}}"><button class="btn btn-danger">Chat</button></a> </td>
+
+
+
+
+
+
+
+
+
+
+		</tr>
+	</tbody>
+
+  {% endfor %}
+
+
+</table>
+</center>

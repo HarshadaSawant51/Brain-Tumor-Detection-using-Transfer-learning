@@ -1,0 +1,74 @@
+{%include 'MainHead.html'%}
+<head>
+<style>
+body {
+ background-image: url("https://cdn.pixabay.com/photo/2016/11/22/20/02/abstract-1850417__340.jpg");
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+}
+</style>
+    <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+</head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+   <div class="col-md-4" ></div>
+    <div class="col-md-4" >
+        <h2>User Registration Form</h2>
+
+  <form action="/UserRegister1"   style="color:white;">
+      <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control"  placeholder="Enter  name"  name="name" >
+    </div>
+    <div class="form-group">
+      <label for="name">UserName:</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter UserName" name="username" required>
+    </div>
+      <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter Email id" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone:</label>
+      <input type="number" class="form-control" id="phone"  placeholder="Enter Phone" name="phone" required>
+    </div>
+        <div class="form-group">
+      <label for="phone">Password:</label>
+      <input type="password" class="form-control" id="password"  placeholder="Enter Password" name="password" required>
+    </div>
+
+<div>
+      <label for="username">Gender:</label>
+              <input type="radio" name="gender" value="male" > Male
+<input type="radio" name="gender" value="female" > Female
+                </span></div>
+      <div class="form-group">
+      <label for="email">Address</label>
+      <textarea class="form-control"  placeholder="Enter Address Info" name="address" required>
+      </textarea>
+    </div>
+
+
+    <div>
+      <button type="submit" class="btn btn-primary" value="Add">Add</button>
+
+    <button type="reset" class="btn btn-dark" value="Clear">Clear</button>
+    </div>
+  </form>
+</div>
+
+</div>
+</body>
+</html>

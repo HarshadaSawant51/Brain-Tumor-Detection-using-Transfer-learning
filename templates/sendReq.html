@@ -1,0 +1,51 @@
+
+<head>
+<style>
+body {
+}
+</style>
+     <head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+</head>
+<h2 class="text-center">Send Request</h2>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12" >
+    <div class="container">
+  <form action="/sendReq1"   onsubmit="return validate()" name="myform" enctype="multipart/form-data" method="post">
+    <div class="form-group">
+
+      <label >Choose Doctor</label>
+      <select class="form-control" name="dname">
+          {% for roww in userDetails %}
+          <option value="{{roww[2]}}">{{roww[2]}}</option>
+          {%endfor%}
+
+
+      </select>
+    </div>
+      <div class="form-group">
+          <label>Descrption</label>
+          <textarea class="form-control" name="descr"></textarea>
+
+      </div>
+
+       <div class="form-group">
+      <label >Image:</label>
+      <input type="file" class="form-control"   name="file">
+    </div>
+    <div>
+      <button type="submit" class="btn btn-primary" value="upload">Send</button>
+
+    <button type="reset" class="btn btn-dark" value="Clear">Clear</button>
+    </div>
+  </form>
+</div>
+</div>
+</div>

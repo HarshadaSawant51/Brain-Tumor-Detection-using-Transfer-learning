@@ -1,0 +1,57 @@
+{% include 'userHead.html'%}
+<head>
+<style>
+body {
+
+}
+</style>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+	<center><h1>View Result Details</h1></center>
+<body>
+
+
+<div class="container text-dark">
+ <table class="table" border="1">
+    <thead class="thead-dark">
+      <tr>
+        <th> Id</th>
+          <th>Image1</th>
+              <th> Image 2</th>
+            <th>Image 3</th>
+            <th>Image 4</th>
+
+          <th>Review comments</th>
+
+        </thead>
+</div>
+{% for user in data %}
+
+	<tbody>
+		<tr>
+
+		   <td>{{user[0]}}</td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=user[3])}}" ></td>
+		            <td><img height="80" src=" {{url_for('send_image1', filename=user[4])}}" ></td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=user[5])}}" ></td>
+            <td><img height="80" src=" {{url_for('send_image1', filename=user[6])}}" ></td>
+
+		   <td>{{user[2]}}</td>
+
+
+
+
+		</tr>
+	</tbody>
+
+  {% endfor %}
+
+
+</table>
+</center>
